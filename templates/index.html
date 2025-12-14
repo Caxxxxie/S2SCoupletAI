@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <title>Couplet Online</title>
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST" class="text-center" style="margin-top: 40px;">
+            <h3>请输入上联</h3>
+            <input type="text"
+                   name="coupletup"
+                   class="form-control"
+                   style="max-width: 420px; margin: 0 auto;"
+                   value="{{ coupletup or '' }}">
+            <br>
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+
+        {% if coupletup %}
+        <div class="text-center" style="margin-top: 30px;">
+            <h4>上联：</h4>
+            <p style="font-size: 20px;">{{ coupletup }}</p>
+        </div>
+        {% endif %}
+
+        {% if coupletdown %}
+        <div class="text-center" style="margin-top: 20px;">
+            <h4>下联：</h4>
+            <p style="font-size: 20px; font-weight: bold;">{{ coupletdown }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
